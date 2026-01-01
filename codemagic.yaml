@@ -1,5 +1,13 @@
 workflows:
-  default-workflow:
-    name: Build APK
+  build-Booka:
+    name: Build Booka APK
+    environment:
+      vars:
+        BUILD_TYPE: debug
     scripts:
-      - echo "Starting build..."
+      - echo "Starting Booka build"
+    android:
+      build_type: apk
+      gradle_task: assembleDebug
+    artifacts:
+      - app/build/outputs/apk/debug/app-debug.apk
