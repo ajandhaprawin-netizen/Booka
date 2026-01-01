@@ -1,13 +1,8 @@
 workflows:
   build-Booka:
     name: Build Booka APK
-    environment:
-      vars:
-        BUILD_TYPE: debug
     scripts:
       - echo "Starting Booka build"
-    android:
-      build_type: apk
-      gradle_task: assembleDebug
+      - ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/apk/debug/app-debug.apk
